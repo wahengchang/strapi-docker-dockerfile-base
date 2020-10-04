@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  strapi:
+    container_name: strapi
+    image: strapi/strapi
+    env_file:
+       - env_file
+    environment:
+        - NODE_ENV=production
+    ports:
+      - 1337:1337
+    volumes:
+        - ./project-name:/srv/app/
