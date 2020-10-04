@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "owners",
+  "info": {
+    "name": "Owner"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "owner"
+    },
+    "restaurants": {
+      "collection": "restaurant",
+      "via": "owner"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    }
+  }
+}
