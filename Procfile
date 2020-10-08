@@ -1,0 +1,2 @@
+run:
+  strapi: yarn start
