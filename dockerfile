@@ -2,17 +2,17 @@ FROM strapi/base
 
 WORKDIR /srv/app
 
-COPY ./package.json ./
-COPY ./yarn.lock ./
+COPY ./project-name ./
 
-RUN yarn install
+RUN npm install
 
 COPY . .
 
 ENV NODE_ENV production
 
-RUN yarn build
+RUN npm run build
 
-EXPOSE 1337
+RUN echo PORT: $PORT
+EXPOSE $PORT
 
-CMD ["yarn", "start"]
+CMD ["npm", "start"]

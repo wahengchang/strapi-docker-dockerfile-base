@@ -47,3 +47,20 @@ $  docker-compose up
 ```
 $ docker container prune
 ```
+
+
+
+## remark
+
+#### 1- Docker container has to named `web`
+
+
+#### 2- config heroku env by `heroku config:set DATABASE_HOST=$DATABASE_HOST`
+
+push to heroku
+```
+$ heroku stack:set container
+
+heroku container:push web
+heroku container:release web
+```
